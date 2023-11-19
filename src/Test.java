@@ -5,23 +5,21 @@ import java.util.List;
 public class Test {
     public void start() {
         List<Person> people = new ArrayList<>();
-        Person p1 = new Person(100, "Hans Nielsen");
-        p1.setEmail("hni@easv.dk");
-        Person p2 = new Person(101, "Niels Hansen");
-        p2.setEmail("nha@easv.dk");
-        Person p3 = new Person(102, "Ib Boesen");
-        p3.setEmail("   ibo@easv.dk");
-        people.add(p1);
-        people.add(p2);
-        people.add(p3);
+        PersonManager pm = new PersonManager();
+        System.out.println(pm);
         Teacher t1 = new Teacher(202, "Bent H. Pedersen", "bhp");
         t1.setEmail("bhp@easv.dk");
         t1.addSubjects("Programming");
         people.add(t1);
+        Student s1 = new Student(105, "Bo Ibsen", "CS");
+        s1.setEmail("bib@easv.dk");
+        s1.addGrade(new GradeInfo("CS", 10));
+        s1.addGrade(new GradeInfo("SDE", 7));
+        people.add(s1);
         System.out.println("ID" + "         " + "Name" + "                " + "Email");
         for (Person allPersons : people) {
             System.out.println(allPersons);
-
         }
+
     }
 }

@@ -1,4 +1,4 @@
-public class Person {
+public abstract class Person {
     private int ID;
     private String name;
     private String email;
@@ -28,5 +28,13 @@ public class Person {
     public String toString(){
 
         return ID + "        " + name + "        " + email + "        ";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Person otherPerson = (Person) obj;
+        if(otherPerson.getID()==this.getID())
+            return true;
+        else return false;
     }
 }
